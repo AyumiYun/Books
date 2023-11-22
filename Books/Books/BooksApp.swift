@@ -15,36 +15,34 @@ struct BooksApp: App {
             TabView() {
             ContentView()
                     .tabItem {
-                    Image(systemName: "book.fill")
-                    Text("Leggi ora")
+                       Label("Leggi ora", systemImage: "book.fill")
+                    
                 }
-                .tag(1)
                 
                 LibreriaView()
                     .tabItem {
-                    Image(systemName: "books.vertical.fill")
-                    Text("Libreria")
+                        Label("Libreria", systemImage: "books.vertical.fill")
+                   
                 }
-                .tag(2)
+            
                 BookStoreView()
                     .tabItem {
                     Image(systemName: "bag.fill")
                     Text("Book Store")
                 }
-                .tag(3)
+               
                 AudioLibriView()
                     .tabItem {
                     Image(systemName: "headphones")
-                    Text("Libreria")
+                    Text("Audiolibri")
                 }
-                .tag(4)
+              
                 CercaView()
                     .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Libreria")
+                        Label("Cerca", systemImage: "magnifyingglass")
                 }
-                .tag(5)
             }
+            
         }
     }
 }

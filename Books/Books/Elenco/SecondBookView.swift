@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct SecondBookView: View {
+    
+    var book: book
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image(book.coverBookImage)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 300)
+            Text(book.title)
+                .font(.title)
+                .bold()
+                .fontDesign(.serif)
+            Text(book.author)
+                .font(.title2)
+                .fontDesign(.serif)
+            Text("\(book.price)")
+                
+            }
     }
 }
 
 #Preview {
-    SecondBookView()
+    SecondBookView(book: BookViewModel().bookList[0])
 }

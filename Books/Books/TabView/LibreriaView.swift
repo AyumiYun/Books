@@ -9,9 +9,11 @@ import SwiftUI
 
 struct LibreriaView: View {
     var body: some View {
-        Image ("ImmyLibro")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image ("ImmyLibro")
+                .resizable()
+            .aspectRatio(contentMode: .fill)
+        }
     }
 }
 

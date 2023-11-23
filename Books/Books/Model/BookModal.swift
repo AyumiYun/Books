@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct book: Hashable {
+    var title: String
+    var author: String
+    var coverBookImage: String
+    var price: Double
+    
+}

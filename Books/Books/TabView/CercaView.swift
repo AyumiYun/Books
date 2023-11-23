@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CercaView: View {
     var body: some View {
-        Image ("ImmySearch")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-        Spacer()
-        Spacer()
+        VStack {
+            Image ("ImmySearch")
+                .resizable()
+            .aspectRatio(contentMode: .fill)
+            Spacer()
+        }
         
     }
 }

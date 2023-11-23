@@ -10,6 +10,7 @@ import SwiftUI
 struct LibriOrizontaliView: View {
     var body: some View {
         Image("David")
+            .resizable()
     }
 }
 

@@ -9,40 +9,40 @@ import SwiftUI
 
 @main
 struct BooksApp: App {
+    
     var body: some Scene {
         WindowGroup {
             
             TabView() {
-            ContentView()
+                ContentView()
                     .tabItem {
-                       Label("Leggi ora", systemImage: "book.fill")
-                    
-                }
+                        Label("Leggi ora", systemImage: "book.fill")
+                        
+                    }
                 
                 LibreriaView()
                     .tabItem {
                         Label("Libreria", systemImage: "books.vertical.fill")
-                   
-                }
-            
+                        
+                    }
+                
                 BookStoreView()
                     .tabItem {
-                    Image(systemName: "bag.fill")
-                    Text("Book Store")
-                }
-               
+                        Label("Bookstore", systemImage: "bag.fill")
+                    }
+                
                 AudioLibriView()
                     .tabItem {
-                    Image(systemName: "headphones")
-                    Text("Audiolibri")
-                }
-              
+                        Label("Audiolibri", systemImage: "headphones")
+                    }
+                
                 CercaView()
                     .tabItem {
                         Label("Cerca", systemImage: "magnifyingglass")
-                }
+                    }
+                
             }
-            
+            .tint(Color.black)
         }
     }
 }

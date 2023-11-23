@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         
         
@@ -34,15 +35,15 @@ struct ContentView: View {
                     }.frame(maxWidth: .infinity, alignment: .trailing)
                         .position(x: 180, y: -50)
                 }
-                
+            
                 Divider()
                 
                 VStack {
                     HStack{
-                        
                         Text("Continua")
                             .font(.title)
                             .fontWeight(.semibold)
+                            .fontDesign(.serif)
                             .multilineTextAlignment(.leading)
                         Spacer()
                     }.padding(-2)
@@ -50,7 +51,7 @@ struct ContentView: View {
                     NavigationLink {
                         ReadingBook()
                     } label: {
-                        Image("Leggendo")
+                        Image("Qui, solo Qui di Christelle Dabos")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 200, height: 90)
@@ -61,65 +62,66 @@ struct ContentView: View {
                     
                     Divider()
                     
-                    Text("Novità libri")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .padding(.leading, -180.0)
-                    
-                    
                     Spacer()
                     
                 }.padding()
                 
-                ScrollView(.horizontal) {
-                    ZStack{
-                        Rectangle()
-                            .frame(height: 400)
-                            .foregroundColor(.white)
-                        
-                        HStack {
-                            Image("David")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                            Image("Ken")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                            Image("Jennifer")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                            Image("Lezioni")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                            Image("Sanaka")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                        }
-                        Spacer()
-                    
-                        
-                              
-                        }
-                    }
-                    
-                    
-                }
+                Text("Novità libri")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .fontDesign(.serif)
+                    .foregroundColor(Color.black)
+                    .multilineTextAlignment(.leading)
+                    .padding(.leading, -180.0)
                 
-            NavigationStack{
-                Image("Novità")
-            }
+                ScrollView(.horizontal) {
+                    HStack{
+                        ForEach (BookViewModel()
+                            .bookList, id: \.self) {
+                                book in
+                                NavigationLink(destination: SecondBookView(book: book)){
+                                    Image (book .coverBookImage)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 200)
+                                }
+                            }
+
+                    }
+                    Divider()
+                }
+
+                
+                /*NavigationStack {
+                 label  {
+                 NavigationLink(destination: NewModel()) {
+                 Text("Elenco completo")
+                 .font(.title2)
+                 .fontWeight(.regular)
+                 .foregroundColor(Color.black)
+                 .multilineTextAlignment(.leading)
+                 .padding(.leading, -180.0)
+                 }
+                 }
+                 }
+                 */
+                
+                /*Image("Sotto")
+                    .resizable()
+                    .scaledToFit()
+                 */
+                
+                
                 
             }.navigationTitle("Leggi ora")
+                .fontDesign(.serif)
+                .font(.title)
+                .fontWeight(.semibold)
+            
         }
     }
+}
 
-
-    
-    #Preview {
-        ContentView()
-    }
+#Preview {
+    ContentView()
+}

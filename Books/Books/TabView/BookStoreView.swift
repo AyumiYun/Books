@@ -9,12 +9,14 @@ import SwiftUI
 
 struct BookStoreView: View {
     var body: some View {
-        Image ("ImmyBookStore")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-        Spacer()
-        Spacer()
-      
+        NavigationStack {
+            VStack {
+                Image ("ImmyBookStore")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                Spacer()
+            }
+        }
     }
 }
 

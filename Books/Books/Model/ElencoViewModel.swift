@@ -7,11 +7,13 @@
 
 import Foundation
 
-class ElencoModel {
-    var 
+class ElencoViewModel {
+    
+    var elencoL = [
+        elenco(Text: "Elenco Completo")
+    ]
     }
-}
 
 #Preview {
-    ElencoModel()
+    ElencoViewModel()
 }

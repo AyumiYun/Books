@@ -9,11 +9,13 @@ import SwiftUI
 
 struct AudioLibriView: View {
     var body: some View {
-        Image ("ImmyAudiolibri")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-        Spacer()
-        Spacer()
+        VStack {
+            Image ("ImmyAudiolibri")
+                .resizable()
+            .aspectRatio(contentMode: .fill)
+            Spacer()
+        }
+        
     }
 }
 

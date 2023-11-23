@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    var viewModel = BookViewModel()
+    
     var body: some View {
         
         
@@ -84,39 +86,46 @@ struct ContentView: View {
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: 200)
-                                }
-                            }
 
-                    }
-                    Divider()
+                                }
+                                .accessibilityLabel(book.author)
+                            }
+                
+                    }.padding()
+                
+                    //Divider()
                 }
 
                 
-                /*NavigationStack {
-                 label  {
-                 NavigationLink(destination: NewModel()) {
-                 Text("Elenco completo")
-                 .font(.title2)
-                 .fontWeight(.regular)
-                 .foregroundColor(Color.black)
-                 .multilineTextAlignment(.leading)
-                 .padding(.leading, -180.0)
-                 }
-                 }
-                 }
-                 */
+               /* NavigationStack {
+                    List {
+                        ForEach (BookViewModel.book) { book in
+                            
+                            NavigationLink {
+                                SecondBookView(book: book)
+                            } label: {
+                                Text("Elenco completo")
+                                    .font(.title2)
+                                    .fontWeight(.regular)
+                                    .foregroundColor(Color.black)
+                                    .multilineTextAlignment(.leading)
+                                    .padding(.leading, -180.0)
+                            }
+                        }
+                    }
+                }
+                */
+                 
                 
-                /*Image("Sotto")
+                Image("Sotto")
                     .resizable()
                     .scaledToFit()
-                 */
                 
                 
                 
-            }.navigationTitle("Leggi ora")
-                .fontDesign(.serif)
+                
+            }.navigationTitle("Leggi ora") .fontDesign(.serif)
                 .font(.title)
-                .fontWeight(.semibold)
             
         }
     }
